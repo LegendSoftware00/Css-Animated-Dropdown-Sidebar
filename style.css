@@ -1,0 +1,114 @@
+/* RESET CSS */
+*{
+    margin:0px;
+    padding:0px;
+    border:0px;
+    box-sizing: border-box;
+}
+a {
+    text-decoration: none;
+}
+ol, li, ol {
+    list-style: none;
+}
+/* CSS CODES */
+body{
+    background-color: rgb(23, 32, 42);
+    color:white;
+    font-family: sans-serif;
+}
+.MainBox {
+    position: relative;
+    height: 100vh;
+}
+.MainBox button {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    width: 100px;
+    padding:20px;
+    top:10px;
+    border:none;
+    background-color: rgb(23, 32, 42);
+    color:white;
+    font-size:18px;
+    font-weight: lighter;
+    clip-path: circle();
+    transition: 300ms all;
+    animation:boxAnm 1s;
+}
+ .MainBox button:hover {
+    background-color: royalblue;
+    color:black;
+    font-weight: 350;
+    z-index: 0;
+}
+/* .MainBox button:hover + .box {
+    width: 20vw;
+    opacity: 1;
+    z-index: 1;
+}  */
+.box {
+    z-index: 0;
+    height: 100%;
+    width: 0vw;
+    background-color: royalblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top:0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms all;
+}
+.box ul li a {
+    color:white;
+    display: block;
+    padding:10px;
+    font-weight: lighter;
+    font-size:38px;
+    text-transform: uppercase;
+    position: relative;
+    transition: 300ms all;
+}
+.box ul li a::before {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom:0px;
+    left:5%;
+    background-color: white;
+    transition: 300ms all;
+}
+.box ul li a::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom:0px;
+    right:5%;
+    background-color: white;
+    transition: 300ms all;
+}
+.box ul li a:hover::before {
+    width: 100%;
+}
+.box ul li a:hover::after {
+    width: 100%;
+}
+@keyframes boxAnm {
+    0%{
+        margin-top:10%;
+        margin-left:10%;
+        font-size:0px;
+    }
+    40%{
+        font-size:0px;
+    }
+    50%{
+        transform: scale(3);
+        background-color: royalblue;
+    }
+}
